@@ -55,7 +55,7 @@ choices: list[str] = [
 ]
 
 # number of difficulties
-difficulties: int = 8
+difficulties: int = 9
 
 # correlates image shown to response by difficulty
 homologated_data: list[dict[dict]] = []
@@ -94,6 +94,6 @@ for person in data:
         # increments the number of pictures gone through
         pics += 1
         # notes the image shown to the response
-        homologated_data[int(pic["background_difficulty"])-1][pic["category"]][choices[pic["response"]]] += 1
+        homologated_data[int(pic["background_difficulty"])][pic["category"]][choices[pic["response"]]] += 1
 
 pp.pprint(homologated_data)
