@@ -96,4 +96,19 @@ for person in data:
         # notes the image shown to the response
         homologated_data[int(pic["background_difficulty"])][pic["category"]][choices[pic["response"]]] += 1
 
+# prints out the homologated data
 pp.pprint(homologated_data)
+
+# prints out the overall accuracy
+print(f"Accuracy: {sum(entry[choice][choice] for entry in homologated_data for choice in choices)/pics}")
+
+# tracks number of participants
+n: int = 98
+# pics per participant
+p: int = 8
+
+# calculates accuracy by difficulty
+i: int
+entry: dict[dict[str, int]]
+for i, entry in enumerate(homologated_data):
+    print(f"Difficulty {i}: {sum(entry[choice][choice] for choice in choices)/(n*p)}")
