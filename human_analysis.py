@@ -2,6 +2,11 @@
 import json
 # can crawl through the human_data directory
 import os
+# imports pretty-printable for outputs
+import pprint
+
+# sets up the pretty printer for a coding format
+pp: pprint.PrettyPrinter = pprint.PrettyPrinter(4, 80)
 
 # relative path to data
 rel_path: str = "human_data/"
@@ -91,4 +96,4 @@ for person in data:
         # notes the image shown to the response
         homologated_data[int(pic["background_difficulty"])-1][pic["category"]][choices[pic["response"]]] += 1
 
-print(homologated_data)
+pp.pprint(homologated_data)
