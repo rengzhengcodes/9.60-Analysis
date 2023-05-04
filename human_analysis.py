@@ -146,4 +146,4 @@ for entry in homologated_data:
             # adds to collapsed tally
             collapsed[shown][response] += num_response
 
-print(collapsed)
+pp.pprint(collapsed)
